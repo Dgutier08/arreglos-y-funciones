@@ -81,18 +81,19 @@ const propiedadeshtml = () => {
 
   /*buscar propiedades*/
 const buscarbtn = () => {
-  let minText = Number(document.querySelector(".min").value);
-  let maxText = Number(document.querySelector(".max").value);
-  let rooms = Number(document.querySelector(".rooms").value);
+  let rooms = Number(document.querySelector("#rooms").value);
+  let desde = Number(document.querySelector("#min").value);
+  let hasta = Number(document.querySelector("#max").value);
+  
   let html = "";
   cantidad = 0
 
     /*validador*/
-  if(minText, maxText, rooms == 0) {
+  if(desde, hasta, rooms == 0) {
     alert("Debes ingresar todos los valores")
   }
 
-  let filtro = propiedadesJSON.filter((p) => p.m >= minText && p.m <= maxText && p.rooms >= rooms
+  let filtro = propiedadesJSON.filter((p) => p.m >= desde && p.m <= hasta && p.rooms >= rooms
   );
 
   if(filtro.length==0){
